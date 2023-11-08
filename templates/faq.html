@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>FAQS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/font-awesome.min.css') }}">
+
+        
+        
+        <!-- Template main Css -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/loader.css') }}">
+        
+        <!-- Modernizr -->
+        <script src="{{ url_for('static',filename='scripts/modernizr-2.6.2.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+    <!-- NAVBAR
+    ================================================== -->
+
+    <header class="main-header">
+        
+    
+        <nav class="navbar navbar-static-top">
+
+            <div class="navbar-main">
+              
+              <div class="container">
+
+                <div class="navbar-header">
+
+                  <a class="navbar-brand" href="/home"><img src="{{ url_for('static',filename='images/mslogoblack.png') }}" height="40" width="180">
+                  </a>
+                  
+                </div>
+
+                <div id="navbar" class="pull-right">
+
+                  <ul class="nav navbar-nav">
+
+                    <li><a href="/home">ABOUT US</a></li>
+                    <li class="has-child"><a href="#">ANALYTICS</a>
+
+                        <ul class="submenu">
+                           <li class="submenu-item"><a href="BrainTumor.html">Brain Tumor </a></li>
+                           <li class="submenu-item"><a href="Retinal.html">Retinal Test </a></li>
+                        </ul>
+  
+                      </li>
+                    <li><a href="/info">INFORMATION</a></li>
+					          <li><a class="is-active" href="/faq">FAQS</a></li>
+                    <li><a href="/feedback">FEEDBACK</a></li>
+                    <li><a href="/login">LOG OUT</a></li>
+                  </ul>
+
+                </div> <!-- /#navbar -->
+
+              </div> <!-- /.container -->
+              
+            </div> <!-- /.navbar-main -->
+
+
+        </nav> 
+
+    </header> <!-- /. main-header -->
+
+
+	<div class="page-heading text-center">
+
+		<div class="container zoomIn animated">
+			
+			<h1 class="page-title">KNOW MORE <span class="title-under"></span></h1>
+			<p class="page-description">
+			FAQS And Our Models
+			</p>
+
+		</div>
+
+	</div>
+
+	<div class="main-container">
+
+		<div class="container">
+
+<div class="row">
+			<div class="col-md-12 fadeIn animate-onscroll">
+				
+				<h2 class="title-style-2"> OUR MODELS <span class="title-under"></span></h2>
+
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				  <div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+					  <h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						  Brain Tumor Test
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					  <div class="panel-body">
+						This classifies between 4 classes ie- meningioma, glioma and pituitary tumor and also normal scans. If a tumor is detected, the image will be passed through a segmentation model and the following output will be generated.	  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingTwo">
+					  <h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						  Retinal Test
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					  <div class="panel-body">
+						This classifies between 4 classes ie- cataract, diabetic retinopathy and glaucoma and also normal retinal images. A feature to detect blood vessels in the eye fundus has also been implemented.  </div>
+					</div>
+				  </div>
+				  <div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingThree">
+					  <h4 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						  Upcoming 
+						</a>
+					  </h4>
+					</div>
+					<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					  <div class="panel-body">
+						We are currently working on expanding the horizons of this detection system - integrating models based on lung diseases and various other conditions. Additionally, existing models are regularly trained and updated to regulate their performance and improve accuracy measures. 	  </div>
+					</div>
+				  </div>
+				</div> </div> </div>
+
+<div class="row">
+				<div class="col-md-12 fadeIn animate-onscroll">
+
+					<h2 class="title-style-2"> FAQs <span class="title-under"></span></h2>
+
+					
+						<div role="tabpanel">
+
+							  <!-- Nav tabs -->
+							  <ul class="nav nav-tabs" role="tablist">
+							    <li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">1</a></li>
+							    <li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">2</a></li>
+							    <li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">3</a></li>
+							    <li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">4</a></li>
+							  </ul>
+
+							  <!-- Tab panes -->
+							  <div class="tab-content">
+							    <div role="tabpanel" class="tab-pane active" id="1">
+<p><b>Is my medical data secure when using this project?</b></p>		
+<p> Data security and privacy are a top priority. All personal health information is protected following strict privacy regulations and standards to ensure your data remains confidential.</p>
+							</div>	<div role="tabpanel" class="tab-pane" id="2">
+<p><b>How does the brain tumor detection work?</b></p>
+<p>The brain tumor detection utilizes medical imaging techniques such as MRI or CT scans. These scans are analyzed using advanced algorithms to identify and locate potential tumors.Efforts are made to continually improve accuracy through research and development.
+</p>
+								</div>	<div role="tabpanel" class="tab-pane" id="3">
+							    	<p><b>What is a retinal test, and why is it important?</b></p>
+<p>A retinal test involves capturing images of the retina at the back of the eye. It is crucial for early detection of various eye diseases, such as diabetic retinopathy or glaucoma, and can aid in preserving vision.
+	Efforts are made to continually improve accuracy through research and development.</p>
+									
+									</div><div role="tabpanel" class="tab-pane" id="4">
+							 <p><b>Is this project intended for medical professionals only?</b></p> 
+							<p> No, this project is designed to benefit both medical professionals and individuals seeking regular health check-ups. It can assist doctors in diagnosis and provide users with valuable insights into their health.</p></div>
+
+						</div>
+
+						<p></p>
+					
+
+				</div>
+
+				
+
+				</div>
+
+				
+			</div>
+
+		
+
+		</div>
+
+
+	</div> <!-- /.main-container  -->
+<br> <BR> 
+  
+   
+    <footer class="main-footer">
+
+
+
+        <div class="footer-main">
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-md-1">
+
+                        <div class="footer-col">
+
+                          
+                            
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+                                <p>
+                                    
+<strong>Our</strong>  project addresses critical healthcare challenges, emphasizing early disease diagnosis for improved outcomes and cost savings. Leveraging data-driven approaches, we aim to make healthcare proactive, efficient, and accessible. This initiative empowers patients with crucial health information, enabling proactive self-care. Overall, it embodies a commitment to alleviate human suffering, enhance healthcare, and promote societal well-being. We're dedicated to expanding and enhancing this project with ongoing solutions.</p>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <div class="footer-col">
+
+                          
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <div class="footer-form" >
+                                    
+                                    <form action="php/mail.php" class="ajax-form">
+
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                        </div>
+
+                                        <div class="form-group alerts">
+                        
+                                            <div class="alert alert-success" role="alert">
+                                              
+                                            </div>
+
+                                            <div class="alert alert-danger" role="alert">
+                                              
+                                            </div>
+                                            
+                                        </div>
+
+                                         <div class="form-group">
+                                            <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                        </div>
+                                        
+                                    </form>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-1">
+
+                        <div class="footer-col">
+
+                          
+                            
+                        </div>
+                    <div class="clearfix"></div>
+
+
+                </div>
+                
+                
+            </div>
+
+            
+        </div>
+
+        <div class="footer-bottom pull-right">
+
+            <div class="container text-right" style="font-size: xx-small;">
+                Medical_Suite @ copyrights 2023 - by MS
+            </div>
+    </footer> <!-- main-footer -->
+
+       
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ url_for('static',filename='scripts/jquery-1.11.1.min.js') }}"><\/script>')</script>
+
+        <!-- Bootsrap javascript file -->
+        <script src="{{ url_for('static',filename='scripts/bootstrap.min.js') }}"></script>
+
+
+        <!-- Template main javascript -->
+        <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
+
+ 
+
+   
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login in / Sign up</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/login.css') }}">
+     <!-- Fonts -->
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="{{ url_for('static',filename='styles/font-awesome.min.css') }}">
+      <!-- Modernizr -->
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+        
+      <!-- Modernizr -->
+      <script src="{{ url_for('static',filename='scripts/modernizr-2.6.2.min.js') }}"></script>
+      <link rel="stylesheet" href="{{ url_for('static',filename='styles/login.css') }}">
+
+        
+
+
+</head>
+
+<body>
+    <centre>
+    <div class="wrapper">
+        <div class="form-container sign-up">
+            <form  action = "" method = "post">
+                <h2><b>sign up</b></h2>
+                <div style="height:30vh;overflow-y: scroll;">
+                <div class="form-group">
+                    <input type="text" name="username_s" required>
+                    <label for="">username</label>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="phone_s" required>
+                    <label for="">phone</label>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="gender_s" required>
+                    <label for="">gender</label>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="age_s" required>
+                    <label for="">age</label>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email_s" required>
+                    <label for="">email</label>
+                    <i class="fas fa-at"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password_s" required>
+                    <label for="">password</label>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="conf_password_s" required>
+                    <label for="">confirm password</label>
+                    <i class="fas fa-lock"></i>
+                </div>
+                </div>
+                <button type="submit" class="btn">sign up</button>
+                <div class="link">
+                    <p>You already have an account?<a href="#" class="signin-link"> sign in</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action = "" method = "post">
+                <h2><B>login</B></h2>
+                <div class="form-group">
+                    <input type="text" name="email_l" required>
+                    <i class="fas fa-user"></i>
+                    <label for="">email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password_l" required>
+                    <i class="fas fa-lock"></i>
+                    <label for="">password</label>
+                </div>
+                <div class="forgot-pass">
+                    <a href="#">forgot password?</a>
+                </div>
+                <button type="submit" class="btn">login</button>
+                <div class="link">
+                    <p class="warning">{{message}}</p>
+                </div>
+                <div class="link">
+                    <p>{{message1}}</p>
+                </div>
+                <div class="link">
+                    <p>Don't have an account?<a href="#" class="signup-link"> sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</centre>
+
+<!--  Scripts
+    ================================================== -->
+    <script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='scripts/login.js') }}"></script>
+
+</body>
+
+</html>
+

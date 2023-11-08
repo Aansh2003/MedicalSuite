@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>RETINAL TEST</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/font-awesome.min.css') }}">
+
+        
+        
+        <!-- Template main Css -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/loader.css') }}">
+        <!-- Modernizr -->
+        <script src="{{ url_for('static',filename='scripts/modernizr-2.6.2.min.js') }}"></script>
+
+
+    </head>
+    <body onload="flashMessage()">
+        <script>
+            function flashMessage(){
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    document.getElementById("content").style.display = "None";
+                    document.getElementById("after").style.display = "block";
+                {% endif %}
+                {% endwith %}
+            }
+        </script>
+    <!-- NAVBAR
+    ================================================== -->
+
+    <header class="main-header">
+        
+    
+        <nav class="navbar navbar-static-top">
+
+        
+
+            <div class="navbar-main">
+              
+              <div class="container">
+
+                <div class="navbar-header">
+               
+                  
+                  <a class="navbar-brand" href="/home"><img src="{{ url_for('static',filename='images/mslogoblack.png') }}" height="40" width="180">
+                  </a>
+                  
+                </div>
+
+                <div id="navbar" class="pull-right">
+
+                  <ul class="nav navbar-nav">
+
+                    <li><a href="/home">HOME</a></li>
+                    
+                    <li class="has-child is-active"><a href="#">ANALYTICS</a>
+                      <ul class="submenu">
+                         <li class="submenu-item"><a href="/tumor_detect">Brain Tumor </a></li>
+                         <li class="submenu-item"><a href="/retinal_detect">Retinal Test </a></li>
+
+                      </ul>
+
+                    </li>
+                    <li><a  href="/info">INFORMATION</a></li>
+                    <li><a href="/faq">FAQS</a></li>
+
+                    <li><a href="/feedback">FEEDBACK</a></li>
+                    <li><a href="/profile">PROFILE</a></li>
+                    <li><a href="/logout">LOG OUT</a></li>
+
+                  </ul>
+
+                </div> <!-- /#navbar -->
+
+              </div> <!-- /.container -->
+              
+            </div> <!-- /.navbar-main -->
+
+
+        </nav> 
+
+    </header> <!-- /. main-header -->
+
+
+	<div class="page-heading text-center">
+
+		<div class="container zoomIn animated">
+			
+			<h1 class="page-title">RETINAL DISEASE DETECTOR <span class="title-under"></span></h1>
+
+			
+		</div>
+
+	</div>
+
+	<div class="main-container fadeIn animated">
+
+		<div class="container">
+            <div id="loader" >
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div> 
+            <div id = "after">
+                <h2 class="title-style-2">Thank you</h2>
+                <p>Your result has been sent to {{email}}.<br> In case you're unable to find it, check your spam folder or contact us using the form at the bottom of this page.<br>If you liked our website, please <a style="text-decoration: underline;" href='/feedback'>support us</a> by making a donation.</p>
+            </div>
+            <div id="content"
+			<div class="row">
+
+                <div class="col-md-7 col-sm-12 col-form">
+
+					<h2 class="title-style-2">FORM <span class="title-under"></span></h2>
+					<form action = "" method = "post" enctype="multipart/form-data">  
+						<div class="row">
+
+							<div class="form-group col-md-6">
+	                            <input type="text" name="name" class="form-control" placeholder="Name*" required>
+	                        </div>
+
+	                         <div class="form-group col-md-6">
+	                            <input type="email" name="email" class="form-control" placeholder="E-mail*" required>
+	                        </div>
+							
+						</div>
+                        <h2 class="title-style-2">SCAN DETAILS <span class="title-under"></span></h2>
+                        <div class="form-group">
+                            <div id="input">
+                                <input type="file" id="input-group" placeholder="Upload Scan" name="file" required>
+                            </div> </div>
+
+
+<br>
+                         <div class="form-group">
+                            <button type="submit" class="btn btn-primary pull-left" 
+                            onclick='document.getElementById("content").style.display = "None";document.getElementById("loader").style.display = "block";'>
+                            Upload</button>
+            
+                            <button type="reset" class="btn btn-primary pull-right">Clear Form</button>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+					</form>
+
+
+				</div>
+
+				<div class="col-md-4 col-md-offset-1 col-contact">
+
+					<h2 class="title-style-2"> MODEL ACCURACY <span class="title-under"></span></h2>
+					<p>
+                        Our model achieves 91% accuracy on classifying between 3 retinal diseases</p>
+                        <h2 class="title-style-2"> HOW TO USE <span class="title-under"></span></h2>
+                        <p>
+                            Fill out your basic information and upload the image(PNG/JPG file) of a retinal scan. Our model will detect the
+                            presence of diseases and email the evaluation back to you within a couple of minutes.</p>
+                  
+					
+				</div>
+
+			</div> <!-- /.row -->
+
+
+		</div>
+		
+
+
+	</div>
+
+
+
+   
+    <footer class="main-footer">
+
+
+
+        <div class="footer-main">
+            <div class="container">
+                
+                <div class="row">
+
+                    <div class="col-md-1">
+
+                        <div class="footer-col">
+
+                          
+                            
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+                                <p>
+                                    
+<strong>Our</strong>  project addresses critical healthcare challenges, emphasizing early disease diagnosis for improved outcomes and cost savings. Leveraging data-driven approaches, we aim to make healthcare proactive, efficient, and accessible. This initiative empowers patients with crucial health information, enabling proactive self-care. Overall, it embodies a commitment to alleviate human suffering, enhance healthcare, and promote societal well-being. We're dedicated to expanding and enhancing this project with ongoing solutions.</p>
+
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <div class="footer-col">
+
+                          
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <div class="footer-form" >
+                                    
+                                    <form action="php/mail.php" class="ajax-form">
+
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                        </div>
+
+                                        <div class="form-group alerts">
+                        
+                                            <div class="alert alert-success" role="alert">
+                                              
+                                            </div>
+
+                                            <div class="alert alert-danger" role="alert">
+                                              
+                                            </div>
+                                            
+                                        </div>
+
+                                         <div class="form-group">
+                                            <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                        </div>
+                                        
+                                    </form>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-1">
+
+                        <div class="footer-col">
+
+                          
+                            
+                        </div>
+                    <div class="clearfix"></div>
+
+
+
+                </div>
+                
+                
+            </div>
+
+            
+        </div>
+
+        <div class="footer-bottom pull-right">
+
+            <div class="container text-right" style="font-size: xx-small;">
+                Medical_Suite @ copyrights 2023 - by MS
+            </div>
+        
+    </footer>
+
+
+
+
+       
+        
+        <!-- jQuery -->
+        
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ url_for('static',filename='scripts/jquery-1.11.1.min.js') }}"><\/script>')</script>
+
+        <!-- Bootsrap javascript file -->
+        <script src="{{ url_for('static',filename='scripts/bootstrap.min.js') }}"></script>
+
+
+        <!-- Template main javascript -->
+        <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
+
+    
+    </body>
+</html>
